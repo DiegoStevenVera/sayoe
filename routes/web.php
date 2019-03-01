@@ -26,9 +26,6 @@ $router->group(['prefix'=>'api/v1'], function() use($router){
     $router->put('/unayoe-perfil/{id}', 'UnayoePerfilController@update');
     $router->delete('/unayoe-perfil/{id}', 'UnayoePerfilController@destroy');
 
-    //PREGUNTAS
-    $router->get('/preguntas', 'PreguntaController@index');
-
     //CUESTIONARIO EVALUACION
     $router->get('/cuestionario-evaluaciones', 'CuestionarioEvaluacionController@index');
     $router->get('/cuestionario-evaluacion/{id}', 'CuestionarioEvaluacionController@show');
