@@ -33,4 +33,9 @@ class CuestionarioEvaluacion extends Model
         return $this->hasMany('App\Pregunta', 'id_cuest_eval', 'id');
     }
 
+    public function alternativas()
+    {
+        return $this->hasManyThrough('App\Alternativa', 'App\Pregunta','id_cuest_eval',
+                                    'id_pregunta','id','id');
+    }
 }

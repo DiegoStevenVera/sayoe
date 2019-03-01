@@ -9,6 +9,7 @@ class UnayoePerfilResource extends JsonResource
     public function toArray($request)
     {
         return [
+            'id' => $this->id,
             'nombre' => $this->nombre,
             'apellido_parteno' => $this->apellido_parteno,
             'apellido_materno' => $this->apellido_materno,
@@ -17,7 +18,7 @@ class UnayoePerfilResource extends JsonResource
             'foto' => $this->foto,
             'auto_descripcion' => $this->auto_descripcion,
             'facultad' => $this->facultad,
-            'usuario' => $this->usuario
+            'usuario' => new UsuarioResource($this->whenLoaded('usuario'))
         ];
     }
 }

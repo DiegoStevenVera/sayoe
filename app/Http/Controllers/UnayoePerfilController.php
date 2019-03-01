@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\UnayoePerfil;
+use Intervention\Image\ImageManagerStatic as Image;
 use App\Http\Resources\UnayoePerfilResource;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,7 @@ class UnayoePerfilController extends Controller
 {
 
     public function index() {
-        return UnayoePerfilResource::collection(UnayoePerfil::paginate(25));
+        return UnayoePerfilResource::collection(UnayoePerfil::with('usuario')->paginate(25));
     }
 
     public function create(Request $request) {
@@ -20,7 +21,15 @@ class UnayoePerfilController extends Controller
        $perfil->apellido_materno = $request->apellido_materno;
        $perfil->profesion = $request->profesion;
        $perfil->celular = $request->celular;
-       $perfil->foto = $request->foto;
+
+        $ruta = base_path('public') . '/img/';
+        $imagenOriginal = $request->file('foto');
+        $imagen = Image::make($imagenOriginal);
+        $temp_name = $this->random_string() . '.' . $imagenOriginal->getClientOriginalExtension();
+        $imagen->resize(300,300);
+        $imagen->save($ruta . $temp_name, 100);
+
+       $perfil->foto = $temp_name;
        $perfil->auto_descripcion = $request->auto_descripcion;
        $perfil->id_usuario = $request->id_usuario;
        $perfil->id_facultad = $request->id_facultad;
@@ -31,7 +40,11 @@ class UnayoePerfilController extends Controller
 
     public function show($id)
     {
-        return new UnayoePerfilResource(UnayoePerfil::find($id));
+
+        $perfil = UnayoePerfil::with('usuario')->where('id', $id)->get();
+        return UnayoePerfilResource::collection($perfil);
+
+        //return new UnayoePerfilResource(UnayoePerfil::find($id));
     }
 
     public function update(Request $request, $id)
@@ -55,5 +68,18 @@ class UnayoePerfilController extends Controller
        $perfil = UnayoePerfil::find($id);
        $perfil->delete();
        return response()->json('Perfil removido satisfactoriamente');
+    }
+
+    protected function random_string()
+    {
+        $key = '';
+        $keys = array_merge( range('a','z'), range(0,9) );
+    
+        for($i=0; $i<10; $i++)
+        {
+            $key .= $keys[array_rand($keys)];
+        }
+    
+        return $key;
     }
 }
