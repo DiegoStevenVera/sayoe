@@ -29,4 +29,8 @@ $router->group(['prefix'=>'api/v1'], function() use($router){
     //CUESTIONARIO EVALUACION
     $router->get('/cuestionario-evaluaciones', 'CuestionarioEvaluacionController@index');
     $router->get('/cuestionario-evaluacion/{id}', 'CuestionarioEvaluacionController@show');
+
+    //CITAS
+    $router->get('/citas', 'CitaController@index');
+    $router->post('/cita', 'CitaController@create');
 });
