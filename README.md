@@ -4,6 +4,7 @@ Comandos para correr el proyecto
 - php -S localhost:8000 -t public         (correr el servicio)
 
 Rutas
+- localhost:8000/api/v1/auth/login          (login)
 - localhost:8000/api/v1/unayoe-perfiles    (listar todos los perfiles)    (READ)
 - localhost:8000/api/v1/unayoe-perfil      (crear un nuevo perfil)        (CREATE)
 - localhost:8000/api/v1/unayoe-perfil/{id} (obtener perfil con el id especificado) (RUD)
