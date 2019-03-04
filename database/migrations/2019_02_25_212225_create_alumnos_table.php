@@ -14,7 +14,7 @@ class CreateAlumnosTable extends Migration
     public function up()
     {
         Schema::create('alumnos', function (Blueprint $table) {
-            $table->unsignedInteger('id');
+            $table->increments('id');
             $table->string('codigo',8)->unique();
             $table->string('nombre',45);
             $table->string('apellido',45)->nullable();
@@ -26,7 +26,6 @@ class CreateAlumnosTable extends Migration
             $table->string('direccion',80);
             $table->string('correo_personal',60)->nullable();
 
-            $table->primary(['id', 'codigo']);
         
             $table->integer('id_usuario')->unsigned();
             $table->integer('id_escuela')->unsigned();

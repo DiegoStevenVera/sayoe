@@ -18,12 +18,9 @@ class CreatePerfilesPsicologicosTable extends Migration
             $table->string('recomendacion', 180)->nullable();
             $table->string('motivo', 45)->nullable();
             $table->date('fecha_limite')->nullable();
-
             $table->integer('id_alumno')->unsigned();
-            $table->string('codigo_alumno', 8);
 
             $table->foreign('id_alumno')->references('id')->on('alumnos');
-            $table->foreign('codigo_alumno')->references('codigo')->on('alumnos');
         });
     }
 
