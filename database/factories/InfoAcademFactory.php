@@ -20,6 +20,5 @@ $factory->define(App\InfoAcadem::class, function (Faker\Generator $faker) {
         'estado_permanencia' => 'Activo',
         'total_creditos' => '82',
         'id_alumno' => '1',
-        'codigo_alumno' => '1',
     ];
 });

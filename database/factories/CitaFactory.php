@@ -19,7 +19,6 @@ $factory->define(App\Cita::class, function (Faker\Generator $faker) {
         'descripcion' => $faker->sentence(2, false),
         'estado' => '1',
         'id_alumno' => '1',
-        'codigo_alumno' => '1',
         'id_unayoe_perfil' => '1',
     ];
 });

@@ -15,7 +15,6 @@ class PerfilPsicologicoSeeder extends Seeder
         for($i = 1 ; $i <= 5 ; $i ++){
             factory(PerfilPsicologico::class)->times(1)->create([
                 'id_alumno' => $i,
-                'codigo_alumno' => $i
             ]);
         }
     }
