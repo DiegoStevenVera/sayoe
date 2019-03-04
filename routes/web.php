@@ -12,25 +12,37 @@
 */
 
 $router->group(['prefix'=>'api/v1'], function() use($router){
-    // FACULTADES
-    $router->get('/facultades', 'FacultadController@index');
-    $router->post('/facultad', 'FacultadController@create');
-    $router->get('/facultad/{id}', 'FacultadController@show');
-    $router->put('/facultad/{id}', 'FacultadController@update');
-    $router->delete('/facultad/{id}', 'FacultadController@destroy');
 
-    //PERFILES UNAYOE
-    $router->get('/unayoe-perfiles', 'UnayoePerfilController@index');
-    $router->post('/unayoe-perfil', 'UnayoePerfilController@create');
-    $router->get('/unayoe-perfil/{id}', 'UnayoePerfilController@show');
-    $router->put('/unayoe-perfil/{id}', 'UnayoePerfilController@update');
-    $router->delete('/unayoe-perfil/{id}', 'UnayoePerfilController@destroy');
+    //AUTH
+    $router->post(
+        'auth/login', 
+        [
+        'uses' => 'AuthController@authenticate'
+        ]
+    );        
 
-    //CUESTIONARIO EVALUACION
-    $router->get('/cuestionario-evaluaciones', 'CuestionarioEvaluacionController@index');
-    $router->get('/cuestionario-evaluacion/{id}', 'CuestionarioEvaluacionController@show');
+    $router->group(['middleware' => 'jwt.auth'], function($router) {
+        // FACULTADES
+        $router->get('/facultades', 'FacultadController@index');
+        $router->post('/facultad', 'FacultadController@create');
+        $router->get('/facultad/{id}', 'FacultadController@show');
+        $router->put('/facultad/{id}', 'FacultadController@update');
+        $router->delete('/facultad/{id}', 'FacultadController@destroy');
 
-    //CITAS
-    $router->get('/citas', 'CitaController@index');
-    $router->post('/cita', 'CitaController@create');
+        //PERFILES UNAYOE
+        $router->get('/unayoe-perfiles', 'UnayoePerfilController@index');
+        $router->post('/unayoe-perfil', 'UnayoePerfilController@create');
+        $router->get('/unayoe-perfil/{id}', 'UnayoePerfilController@show');
+        $router->put('/unayoe-perfil/{id}', 'UnayoePerfilController@update');
+        $router->delete('/unayoe-perfil/{id}', 'UnayoePerfilController@destroy');
+
+        //CUESTIONARIO EVALUACION
+        $router->get('/cuestionario-evaluaciones', 'CuestionarioEvaluacionController@index');
+        $router->get('/cuestionario-evaluacion/{id}', 'CuestionarioEvaluacionController@show');
+
+        //CITAS
+        $router->get('/citas', 'CitaController@index');
+        $router->post('/cita', 'CitaController@create');
+    });    
 });
+
