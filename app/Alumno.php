@@ -32,21 +32,21 @@ class Alumno extends Model
 
     public function cursosObservados()
     {
-        return $this->hasMany('App\CursoObservado', 'codigo_alumno', 'codigo');
+        return $this->hasMany('App\CursoObservado', 'id_alumno', 'id');
     }
 
     public function infoAcadem()
     {
-        return $this->hasOne('App\InfoAcadem', 'codigo_alumno', 'codigo');
+        return $this->hasOne('App\InfoAcadem', 'id_alumno', 'id');
     }
 
     public function citas()
     {
-        return $this->hasMany('App\Cita', 'codigo_alumno', 'codigo');
+        return $this->hasMany('App\Cita', 'id_alumno', 'id');
     }
 
     public function perfilesPsicologicos()
     {
-        return $this->hasMany('App\PerfilPsicologico', 'codigo_alumno', 'codigo');
+        return $this->hasMany('App\PerfilPsicologico', 'id_alumno', 'id');
     }
 }

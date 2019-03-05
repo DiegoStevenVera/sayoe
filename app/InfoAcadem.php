@@ -16,12 +16,12 @@ class InfoAcadem extends Model
      */
     protected $fillable = [
         'ciclo', 'situacion', 'promedio', 'anho_ingreso', 'estado_permanencia',
-        'total_creditos', 'id_alumno', 'codigo_alumno'
+        'total_creditos', 'id_alumno',
     ];
 
     public function alumno()
     {
-        return $this->belongsTo('App\Alumno', 'codigo_alumno', 'codigo');
+        return $this->belongsTo('App\Alumno', 'id_alumno', 'id');
     }
 
 }
