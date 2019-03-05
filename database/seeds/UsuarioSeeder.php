@@ -13,6 +13,7 @@ class UsuarioSeeder extends Seeder
     public function run()
     {
         factory(Usuario::class)->times(1)->create([
+            'correo' => 'sayoe@gmail.com',
             'id_rol' => 1
         ]);
 
