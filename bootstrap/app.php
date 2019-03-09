@@ -68,6 +68,12 @@ $app->routeMiddleware([
     'auth' => App\Http\Middleware\Authenticate::class,
 ]);
 
+
+$app->middleware([
+    'Vluzrmos\LumenCors\CorsMiddleware'
+]);
+
+
 /*
 |--------------------------------------------------------------------------
 | Register Service Providers
