@@ -16,7 +16,7 @@ class CreateUnayoePerfilesTable extends Migration
         Schema::create('unayoe_perfiles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre', 45);
-            $table->string('apellido_parteno', 45);
+            $table->string('apellido_paterno', 45);
             $table->string('apellido_materno', 45)->nullable();
             $table->string('profesion', 45)->nullable();
             $table->string('celular', 10)->nullable();

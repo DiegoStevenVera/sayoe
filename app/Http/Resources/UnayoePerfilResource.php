@@ -11,14 +11,13 @@ class UnayoePerfilResource extends JsonResource
         return [
             'id' => $this->id,
             'nombre' => $this->nombre,
-            'apellido_parteno' => $this->apellido_parteno,
+            'apellido_paterno' => $this->apellido_paterno,
             'apellido_materno' => $this->apellido_materno,
             'profesion' => $this->profesion,
             'celular' => $this->celular,
             'foto' => $this->foto,
             'auto_descripcion' => $this->auto_descripcion,
-            'facultad' => $this->facultad,
-            'usuario' => new UsuarioResource($this->whenLoaded('usuario'))
-        ];
+            'facultad' => $this->facultad
+        ]; 
     }
 }

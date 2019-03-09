@@ -17,7 +17,7 @@ class UnayoePerfilController extends Controller
     public function create(Request $request) {
        $perfil = new UnayoePerfil;
        $perfil->nombre = $request->nombre;
-       $perfil->apellido_parteno = $request->apellido_parteno;
+       $perfil->apellido_paterno = $request->apellido_paterno;
        $perfil->apellido_materno = $request->apellido_materno;
        $perfil->profesion = $request->profesion;
        $perfil->celular = $request->celular;
@@ -52,12 +52,12 @@ class UnayoePerfilController extends Controller
         $perfil = UnayoePerfil::find($id);
         
         $perfil->nombre = $request->input('nombre');
-       $perfil->apellido_parteno = $request->input('apellido_parteno');
-       $perfil->apellido_materno = $request->unput('apellido_materno');
-       $perfil->profesion = $request->input('profesion');
-       $perfil->celular = $request->input('celular');
-       $perfil->foto = $request->input('foto');
-       $perfil->auto_descripcion = $request->input('auto_descripcion');
+        $perfil->apellido_paterno = $request->input('apellido_paterno');
+        $perfil->apellido_materno = $request->input('apellido_materno');
+        $perfil->profesion = $request->input('profesion');
+        $perfil->celular = $request->input('celular');
+        $perfil->foto = $request->input('foto');
+        $perfil->auto_descripcion = $request->input('auto_descripcion');
 
        $perfil->save();
        return response()->json($perfil);
