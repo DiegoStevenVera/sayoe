@@ -14,9 +14,9 @@
 $factory->define(App\UnayoePerfil::class, function (Faker\Generator $faker) {
     return [
         'id' => '1',
-        'nombre' => $faker->name,
-        'apellido_paterno' => $faker->name,
-        'apellido_materno' => $faker->name,
+        'nombre' => $faker->sentence(2, false),
+        'apellido_paterno' => $faker->sentence(1, false),
+        'apellido_materno' => $faker->sentence(1, false),
         'profesion' => 'Psicologa',
         'facebook' => 'https://www.facebook.com/LuisYauriMartinez',
         'celular' => $faker->randomNumber($nbDigits = 7),

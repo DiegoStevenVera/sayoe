@@ -22,7 +22,7 @@ class AuthController extends BaseController
         $payload = [
             'iss' => "lumen-jwt", 
             'sub' => $user->id, 
-            'nombre' => $user->unayoePerfil->nombre,
+            'nombre' => $this->primerNombre($user->unayoePerfil->nombre),
             'apellido' => $user->unayoePerfil->apellido_paterno,
             'foto' => $user->unayoePerfil->foto,
             'rol' => $user->rol,
@@ -71,5 +71,16 @@ class AuthController extends BaseController
       $token = auth()->login($user);
 
       return $this->respondWithToken($token);
+    }
+
+    public function primerNombre ($nombres){
+        $nombre= '';
+        for($i=0 ; $i< strlen($nombres); $i++){
+            if($nombres{$i} == ' '){
+                return $nombre;
+            }
+            $nombre = $nombre.$nombres{$i};
+        }
+        return $nombre;
     }
 }
