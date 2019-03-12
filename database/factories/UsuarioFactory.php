@@ -18,6 +18,6 @@ $factory->define(App\Usuario::class, function (Faker\Generator $faker) {
         'estado' => 1,
         'autenticado' => 1,
         'ultima_sesion' => '2012-02-03',
-        'id_rol' => 2
+        'id_rol' => '128963',
     ];
 });

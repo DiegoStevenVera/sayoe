@@ -13,6 +13,7 @@
 
 $factory->define(App\Rol::class, function (Faker\Generator $faker) {
     return [
+        'id' => 1,
         'nombre' => $faker->name,
     ];
 });

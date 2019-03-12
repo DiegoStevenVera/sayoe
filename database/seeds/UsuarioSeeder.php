@@ -14,7 +14,7 @@ class UsuarioSeeder extends Seeder
     {
         factory(Usuario::class)->times(1)->create([
             'correo' => 'sayoe@gmail.com',
-            'id_rol' => 1
+            'id_rol' => '542687'
         ]);
 
         factory(Usuario::class)->times(10)->create();
