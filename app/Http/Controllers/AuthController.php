@@ -43,6 +43,8 @@ class AuthController extends BaseController
         }
         
         if (Hash::check($this->request->input('contrasenha'), $user->contrasenha)) {
+            $user->ultima_sesion = new \DateTime();
+            $user->save();
             return response()->json([
                 'token' => $this->jwt($user)
             ], 200);

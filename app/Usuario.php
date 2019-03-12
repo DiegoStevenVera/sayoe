@@ -30,7 +30,7 @@ class Usuario extends Model implements AuthenticatableContract, AuthorizableCont
      * @var array
      */
     protected $hidden = [
-        'ultima_sesion', 'contrasenha'
+        'contrasenha'
     ];
 
     public function alumno()
