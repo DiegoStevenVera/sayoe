@@ -19,6 +19,7 @@ class CreateUnayoePerfilesTable extends Migration
             $table->string('apellido_paterno', 45);
             $table->string('apellido_materno', 45)->nullable();
             $table->string('profesion', 45)->nullable();
+            $table->string('facebook', 45)->nullable();
             $table->string('celular', 10)->nullable();
             $table->string('foto', 80)->nullable();
             $table->string('auto_descripcion', 180)->nullable();
