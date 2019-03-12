@@ -22,6 +22,9 @@ class AuthController extends BaseController
         $payload = [
             'iss' => "lumen-jwt", 
             'sub' => $user->id, 
+            'nombre' => $user->unayoePerfil->nombre,
+            'apellido' => $user->unayoePerfil->apellido_paterno,
+            'foto' => $user->unayoePerfil->foto,
             'rol' => $user->rol,
             'iat' => time(), 
             'exp' => time() + 60*60 

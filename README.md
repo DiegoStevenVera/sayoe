@@ -1,5 +1,6 @@
 Comandos para correr el proyecto
-- php artisan migrate                     (migracion de la bd)
+- composer install
+- php artisan migrate:refresh             (roll back y migracion de la bd)
 - php artisan db:seed                     (datos falsos)
 - php -S localhost:8000 -t public         (correr el servicio)
 
