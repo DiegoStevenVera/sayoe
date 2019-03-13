@@ -20,7 +20,6 @@ class UnayoePerfilResource extends JsonResource
             'auto_descripcion' => $this->auto_descripcion,
             'facultad' => $this->facultad->nombre,
             'usuario' => $this->usuario,
-            'mensaje_mes' => $this->mensajes->first()->mensaje_mes
         ]; 
     }
 }
