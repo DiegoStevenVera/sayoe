@@ -20,6 +20,8 @@ $factory->define(App\UnayoePerfil::class, function (Faker\Generator $faker) {
         'profesion' => 'Psicologa',
         'facebook' => 'https://www.facebook.com/LuisYauriMartinez',
         'celular' => $faker->randomNumber($nbDigits = 7),
+        'wsp' => $faker->randomNumber($nbDigits = 9),
+        'correo' => $faker->unique()->safeEmail,
         'foto' => 'https://images-na.ssl-images-amazon.com/images/I/617VVLMw8QL._SX425_.jpg',
         'auto_descripcion' => $faker->sentence(3, false),
         'id_usuario' => '1',

@@ -17,7 +17,7 @@ class UnayoePerfil extends Model
      */
     protected $fillable = [
         'nombre', 'apellido_paterno', 'apellido_materno', 'profesion', 'facebook',
-        'celular', 'foto', 'auto_descripcion', 'id_usuario', 'id_facultad'
+        'celular', 'wsp', 'correo', 'foto', 'auto_descripcion', 'id_usuario', 'id_facultad'
     ];
 
     public function facultad()
