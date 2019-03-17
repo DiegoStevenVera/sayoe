@@ -50,17 +50,27 @@ class UnayoePerfilController extends Controller
     public function update(Request $request, $id)
     { 
         $perfil = UnayoePerfil::find($id);
-        
-        $perfil->nombre = $request->input('nombre');
-        $perfil->apellido_paterno = $request->input('apellido_paterno');
-        $perfil->apellido_materno = $request->input('apellido_materno');
-        $perfil->profesion = $request->input('profesion');
-        $perfil->celular = $request->input('celular');
-        $perfil->foto = $request->input('foto');
-        $perfil->auto_descripcion = $request->input('auto_descripcion');
 
-       $perfil->save();
-       return response()->json($perfil);
+        if($perfil->celular != $request->celular && ($request->celular != ''))
+            $perfil->celular = $request->input('celular');
+
+        if($perfil->foto != $request->foto && ($request->foto != '')) 
+            $perfil->foto = $request->input('foto');
+
+        if($perfil->auto_descripcion != $request->auto_descripcion && ($request->auto_descripcion != ''))
+            $perfil->auto_descripcion = $request->input('auto_descripcion');
+
+        if($perfil->facebook != $request->facebook && ($request->facebook != ''))
+            $perfil->facebook = $request->input('facebook');
+
+        if($perfil->wsp != $request->wsp && ($request->wsp != ''))
+            $perfil->wsp = $request->input('wsp');
+            
+        if($perfil->correo != $request->correo && ($request->correo != ''))
+            $perfil->correo = $request->input('correo');        
+
+        $perfil->save();
+        return response()->json($perfil);
     }
 
     public function destroy($id)
