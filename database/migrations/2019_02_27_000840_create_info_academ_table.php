@@ -16,7 +16,7 @@ class CreateInfoAcademTable extends Migration
         Schema::create('info_academ', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('ciclo');
-            $table->string('situacion')->nullable();
+            $table->char('situacion', 1)->nullable();
             $table->float('promedio', 5, 2);
             $table->string('anho_ingreso', 4);
             $table->string('estado_permanencia')->nullable();

@@ -14,7 +14,7 @@
 $factory->define(App\InfoAcadem::class, function (Faker\Generator $faker) {
     return [
         'ciclo' => '5',
-        'situacion' => $faker->sentence(2, false),
+        'situacion' => "O",
         'promedio' => '15.6',
         'anho_ingreso' => '2016',
         'estado_permanencia' => 'Activo',

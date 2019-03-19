@@ -12,9 +12,16 @@ class InfoAcademSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 1 ; $i <= 20 ; $i ++){
+        for($i = 1 ; $i <= 10 ; $i ++){
             factory(InfoAcadem::class)->times(1)->create([
                 'id_alumno' => $i,
+            ]);
+        }
+
+        for($i = 1 ; $i <= 10 ; $i ++){
+            factory(InfoAcadem::class)->times(1)->create([
+                'id_alumno' => $i,
+                'situacion' => "R"
             ]);
         }
     }
