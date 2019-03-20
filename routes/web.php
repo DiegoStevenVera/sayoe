@@ -43,6 +43,9 @@ $router->group(['prefix'=>'api/v1'], function() use($router){
         //CITAS
         $router->get('/citas', 'CitaController@index');
         $router->post('/cita', 'CitaController@create');
+
+        //ALUMNOS
+        $router->get('/alumnoShort/{id}', 'AlumnoController@shortAlumno');
     });    
 });
 
