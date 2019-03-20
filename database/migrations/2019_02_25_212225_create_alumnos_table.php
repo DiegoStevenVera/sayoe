@@ -17,7 +17,8 @@ class CreateAlumnosTable extends Migration
             $table->increments('id');
             $table->string('codigo',8)->unique();
             $table->string('nombre',45);
-            $table->string('apellido',45)->nullable();
+            $table->string('apellido_paterno', 45);
+            $table->string('apellido_materno', 45)->nullable();
             $table->string('dni',8);
             $table->tinyInteger('sexo');
             $table->date('fecha_nacimiento');
