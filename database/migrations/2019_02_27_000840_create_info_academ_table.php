@@ -22,7 +22,7 @@ class CreateInfoAcademTable extends Migration
             $table->string('estado_permanencia')->nullable();
             $table->integer('total_creditos')->nullable();
             
-            $table->integer('id_alumno')->unsigned();
+            $table->integer('id_alumno')->unsigned()->unique();
 
             $table->foreign('id_alumno')->references('id')->on('alumnos');
 

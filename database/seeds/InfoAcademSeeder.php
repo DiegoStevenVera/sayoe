@@ -18,7 +18,7 @@ class InfoAcademSeeder extends Seeder
             ]);
         }
 
-        for($i = 1 ; $i <= 10 ; $i ++){
+        for($i = 11 ; $i <= 20 ; $i ++){
             factory(InfoAcadem::class)->times(1)->create([
                 'id_alumno' => $i,
                 'situacion' => "R"
