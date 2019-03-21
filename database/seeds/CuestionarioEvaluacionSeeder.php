@@ -12,6 +12,6 @@ class CuestionarioEvaluacionSeeder extends Seeder
      */
     public function run()
     {
-        Factory(CuestionarioEvaluacion::class)->times(10)->create();
+        Factory(CuestionarioEvaluacion::class)->times(4)->create();
     }
 }

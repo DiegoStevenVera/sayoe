@@ -12,7 +12,7 @@ class ResultadoSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 1; $i <= 10; $i++){
+        for($i = 1; $i <= 4; $i++){
             factory(Resultado::class)->times(2)->create([
                 'id_cuest_eval' => $i, 
             ]); 

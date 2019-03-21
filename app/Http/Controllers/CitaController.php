@@ -24,7 +24,7 @@ class CitaController extends Controller
         $cita->id_unayoe_perfil = $request->id_unayoe_perfil;
         
         $cita->save();
-        return response()->json($cita);
+        return response()->json($cita, 200);
     }
 
 }

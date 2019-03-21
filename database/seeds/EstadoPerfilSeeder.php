@@ -13,7 +13,7 @@ class EstadoPerfilSeeder extends Seeder
     public function run()
     {
         for($p = 1 ; $p <= 5; $p++){
-            for($e = 1 ; $e <= 10; $e++){
+            for($e = 1 ; $e <= 4; $e++){
                 factory(EstadoPerfil::class)->times(1)->create([
                     'id_perfil_psico' => $p,
                     'id_cuest_eval' => $e,

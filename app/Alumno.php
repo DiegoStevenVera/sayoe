@@ -20,6 +20,11 @@ class Alumno extends Model
         'id_escuela'
     ];
 
+    public static function idAlumno ($codigo)
+    {
+        return (Alumno::select('id')->find($codigo))["id"];
+    }
+
     public function usuario()
     {
         return $this->belongsTo('App\Usuario', 'id_usuario', 'id');
