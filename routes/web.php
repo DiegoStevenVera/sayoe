@@ -48,7 +48,8 @@ $router->group(['prefix'=>'api/v1'], function() use($router){
         $router->get('/alumnoShort/{id}', 'AlumnoController@shortAlumno');
         
         //CREAR PERFIL_PSICOLOGICO, ESTADO_PERFIL
-        $router->post('/asignar', 'PerfilPsicologicoController@create');
+        $router->post('/asignarAlumno', 'PerfilPsicologicoController@create');
+        $router->post('/asignarGrupo', 'PerfilPsicologicoController@createGroup');
     });    
 });
 

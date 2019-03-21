@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\InfoAcadem;
 use Illuminate\Database\Eloquent\Model;
 
 class Alumno extends Model 
@@ -23,6 +24,11 @@ class Alumno extends Model
     public static function idAlumno ($codigo)
     {
         return (Alumno::select('id')->find($codigo))["id"];
+    }
+
+    public static function alumnosCiclo($ciclo) {
+        $listId = InfoAcadem::where('ciclo', $ciclo)->get(['id_alumno']);
+        return Alumno::whereIn('id', $listId)->get();
     }
 
     public function usuario()
