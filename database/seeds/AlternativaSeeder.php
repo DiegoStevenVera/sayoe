@@ -12,10 +12,12 @@ class AlternativaSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 1 ; $i <= 20 ; $i ++){
-            factory(Alternativa::class)->times(2)->create([
+        for($i = 1 ; $i <= 381 ; $i ++){
+            factory(Alternativa::class)->times(4)->create([
                 'id_pregunta' => $i,
             ]);
         }
+
+        
     }
 }

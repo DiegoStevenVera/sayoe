@@ -12,10 +12,17 @@ class PreguntaSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 1; $i <= 4; $i++){
-            factory(Pregunta::class)->times(5)->create([
-                'id_cuest_eval' => $i, 
-            ]); 
-        }
+        factory(Pregunta::class)->times(60)->create([
+            'id_cuest_eval' => 1, 
+        ]); 
+        factory(Pregunta::class)->times(21)->create([
+            'id_cuest_eval' => 2, 
+        ]); 
+        factory(Pregunta::class)->times(120)->create([
+            'id_cuest_eval' => 3, 
+        ]); 
+        factory(Pregunta::class)->times(180)->create([
+            'id_cuest_eval' => 4, 
+        ]); 
     }
 }

@@ -13,7 +13,7 @@
 
 $factory->define(App\Alternativa::class, function (Faker\Generator $faker) {
     return [
-        'descripcion' => $faker->sentence(1, false),
+        'descripcion' => $faker->sentence(6, false),
         'id_pregunta' => '1',
     ];
 });

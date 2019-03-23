@@ -13,7 +13,7 @@
 
 $factory->define(App\Pregunta::class, function (Faker\Generator $faker) {
     return [
-        'pregunta' => $faker->sentence(1, false),
+        'pregunta' => $faker->sentence(10, false),
         'id_cuest_eval' => '1',
     ];
 });
